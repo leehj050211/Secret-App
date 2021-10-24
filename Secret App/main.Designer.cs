@@ -29,27 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.processKillButton = new System.Windows.Forms.Button();
             this.processNameBox = new System.Windows.Forms.TextBox();
             this.processKillTimer = new System.Windows.Forms.Timer(this.components);
             this.killStatus = new System.Windows.Forms.Label();
             this.programExit = new System.Windows.Forms.Button();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // processKillButton
             // 
+            this.processKillButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.processKillButton.AutoSize = true;
             this.processKillButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.processKillButton.Location = new System.Drawing.Point(143, 307);
+            this.processKillButton.Location = new System.Drawing.Point(124, 298);
             this.processKillButton.Name = "processKillButton";
-            this.processKillButton.Size = new System.Drawing.Size(75, 23);
+            this.processKillButton.Size = new System.Drawing.Size(131, 23);
             this.processKillButton.TabIndex = 0;
-            this.processKillButton.Text = "On / Off";
+            this.processKillButton.Text = "켜고 트레이로 최소화";
             this.processKillButton.UseVisualStyleBackColor = true;
             this.processKillButton.Click += new System.EventHandler(this.processKillButton_Click);
             // 
             // processNameBox
             // 
-            this.processNameBox.Location = new System.Drawing.Point(134, 231);
+            this.processNameBox.Location = new System.Drawing.Point(142, 200);
             this.processNameBox.Name = "processNameBox";
             this.processNameBox.Size = new System.Drawing.Size(100, 21);
             this.processNameBox.TabIndex = 1;
@@ -62,21 +66,29 @@
             // killStatus
             // 
             this.killStatus.AutoSize = true;
-            this.killStatus.Location = new System.Drawing.Point(166, 268);
+            this.killStatus.Location = new System.Drawing.Point(131, 243);
             this.killStatus.Name = "killStatus";
-            this.killStatus.Size = new System.Drawing.Size(29, 12);
+            this.killStatus.Size = new System.Drawing.Size(121, 12);
             this.killStatus.TabIndex = 2;
-            this.killStatus.Text = "상태";
+            this.killStatus.Text = "프라이버시 보호 꺼짐";
+            this.killStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // programExit
             // 
-            this.programExit.Location = new System.Drawing.Point(143, 351);
+            this.programExit.Location = new System.Drawing.Point(154, 336);
             this.programExit.Name = "programExit";
             this.programExit.Size = new System.Drawing.Size(75, 23);
             this.programExit.TabIndex = 3;
             this.programExit.Text = "종료";
             this.programExit.UseVisualStyleBackColor = true;
             this.programExit.Click += new System.EventHandler(this.programExit_Click);
+            // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "Secret App";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.Click += new System.EventHandler(this.notifyIcon_Click);
             // 
             // main
             // 
@@ -87,6 +99,7 @@
             this.Controls.Add(this.killStatus);
             this.Controls.Add(this.processNameBox);
             this.Controls.Add(this.processKillButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "main";
             this.Text = "Secret App";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.main_FormClosing);
@@ -102,6 +115,7 @@
         private System.Windows.Forms.Timer processKillTimer;
         private System.Windows.Forms.Label killStatus;
         private System.Windows.Forms.Button programExit;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
 

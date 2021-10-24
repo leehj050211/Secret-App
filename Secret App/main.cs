@@ -28,11 +28,14 @@ namespace Secret_App
             {
                 processKillTimer.Enabled = false;
                 killStatus.Text = "프라이버시 보호 꺼짐";
+                processKillButton.Text = "켜고 트레이로 최소화";
             }
             else
             {
                 processKillTimer.Enabled = true;
                 killStatus.Text = "프라이버시 보호 켜짐";
+                processKillButton.Text = "끄기";
+                this.Hide();
             }
         }
 
@@ -45,6 +48,11 @@ namespace Secret_App
         {
             closeCancel = false;
             this.Close();
+        }
+
+        private void notifyIcon_Click(object sender, EventArgs e)
+        {
+            this.Show();
         }
     }
 }
