@@ -33,6 +33,7 @@
             this.processNameBox = new System.Windows.Forms.TextBox();
             this.processKillTimer = new System.Windows.Forms.Timer(this.components);
             this.killStatus = new System.Windows.Forms.Label();
+            this.programExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // processKillButton
@@ -42,7 +43,7 @@
             this.processKillButton.Name = "processKillButton";
             this.processKillButton.Size = new System.Drawing.Size(75, 23);
             this.processKillButton.TabIndex = 0;
-            this.processKillButton.Text = "프로세스 종료";
+            this.processKillButton.Text = "On / Off";
             this.processKillButton.UseVisualStyleBackColor = true;
             this.processKillButton.Click += new System.EventHandler(this.processKillButton_Click);
             // 
@@ -67,16 +68,28 @@
             this.killStatus.TabIndex = 2;
             this.killStatus.Text = "상태";
             // 
+            // programExit
+            // 
+            this.programExit.Location = new System.Drawing.Point(143, 351);
+            this.programExit.Name = "programExit";
+            this.programExit.Size = new System.Drawing.Size(75, 23);
+            this.programExit.TabIndex = 3;
+            this.programExit.Text = "종료";
+            this.programExit.UseVisualStyleBackColor = true;
+            this.programExit.Click += new System.EventHandler(this.programExit_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.programExit);
             this.Controls.Add(this.killStatus);
             this.Controls.Add(this.processNameBox);
             this.Controls.Add(this.processKillButton);
             this.Name = "main";
             this.Text = "Secret App";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.main_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,6 +101,7 @@
         private System.Windows.Forms.TextBox processNameBox;
         private System.Windows.Forms.Timer processKillTimer;
         private System.Windows.Forms.Label killStatus;
+        private System.Windows.Forms.Button programExit;
     }
 }
 

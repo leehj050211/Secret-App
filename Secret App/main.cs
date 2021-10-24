@@ -7,9 +7,11 @@ namespace Secret_App
     public partial class main : Form
     {
         String processName = "";
+        bool closeCancel = true;
         public main()
         {
             InitializeComponent();
+            this.ControlBox = false;
         }
         private void processKillTimer_Tick(object sender, EventArgs e)
         {
@@ -25,13 +27,24 @@ namespace Secret_App
             if (processKillTimer.Enabled)
             {
                 processKillTimer.Enabled = false;
-                killStatus.Text = "프로세스 종료 꺼짐";
+                killStatus.Text = "프라이버시 보호 꺼짐";
             }
             else
             {
                 processKillTimer.Enabled = true;
-                killStatus.Text = "프로세스 종료 켜짐";
+                killStatus.Text = "프라이버시 보호 켜짐";
             }
+        }
+
+        private void main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = closeCancel;
+        }
+
+        private void programExit_Click(object sender, EventArgs e)
+        {
+            closeCancel = false;
+            this.Close();
         }
     }
 }
