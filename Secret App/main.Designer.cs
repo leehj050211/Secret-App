@@ -42,8 +42,7 @@
             // 
             this.processKillButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.processKillButton.AutoSize = true;
-            this.processKillButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.processKillButton.Location = new System.Drawing.Point(124, 298);
+            this.processKillButton.Location = new System.Drawing.Point(68, 202);
             this.processKillButton.Name = "processKillButton";
             this.processKillButton.Size = new System.Drawing.Size(131, 23);
             this.processKillButton.TabIndex = 0;
@@ -53,10 +52,16 @@
             // 
             // processNameBox
             // 
-            this.processNameBox.Location = new System.Drawing.Point(142, 200);
+            this.processNameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.processNameBox.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.processNameBox.ForeColor = System.Drawing.Color.Gray;
+            this.processNameBox.Location = new System.Drawing.Point(59, 149);
             this.processNameBox.Name = "processNameBox";
-            this.processNameBox.Size = new System.Drawing.Size(100, 21);
+            this.processNameBox.Size = new System.Drawing.Size(151, 21);
             this.processNameBox.TabIndex = 1;
+            this.processNameBox.Text = "잠그려는 창의 제목을 입력";
+            this.processNameBox.Enter += new System.EventHandler(this.processNameBox_Enter);
+            this.processNameBox.Leave += new System.EventHandler(this.processNameBox_Leave);
             // 
             // processKillTimer
             // 
@@ -65,17 +70,21 @@
             // 
             // killStatus
             // 
+            this.killStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.killStatus.AutoSize = true;
-            this.killStatus.Location = new System.Drawing.Point(131, 243);
+            this.killStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            this.killStatus.Location = new System.Drawing.Point(83, 115);
             this.killStatus.Name = "killStatus";
-            this.killStatus.Size = new System.Drawing.Size(121, 12);
+            this.killStatus.Size = new System.Drawing.Size(97, 12);
             this.killStatus.TabIndex = 2;
-            this.killStatus.Text = "프라이버시 보호 꺼짐";
+            this.killStatus.Text = "사생활 보호 꺼짐";
             this.killStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // programExit
             // 
-            this.programExit.Location = new System.Drawing.Point(154, 336);
+            this.programExit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.programExit.AutoSize = true;
+            this.programExit.Location = new System.Drawing.Point(94, 242);
             this.programExit.Name = "programExit";
             this.programExit.Size = new System.Drawing.Size(75, 23);
             this.programExit.TabIndex = 3;
@@ -94,7 +103,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 461);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.ClientSize = new System.Drawing.Size(264, 341);
             this.Controls.Add(this.programExit);
             this.Controls.Add(this.killStatus);
             this.Controls.Add(this.processNameBox);
