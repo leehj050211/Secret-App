@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace Secret_App
 {
     public partial class main : Form
     {
+        [DllImport("user32")] private static extern bool LockWorkStation();
+
         String processName = "";
         bool closeCancel = true;
         public main()
@@ -26,6 +29,7 @@ namespace Secret_App
             processName = processNameBox.Text;
             if (processKillTimer.Enabled)
             {
+                LockWorkStation();
                 processKillTimer.Enabled = false;
                 killStatus.Text = "프라이버시 보호 꺼짐";
                 processKillButton.Text = "켜고 트레이로 최소화";
@@ -34,7 +38,7 @@ namespace Secret_App
             {
                 processKillTimer.Enabled = true;
                 killStatus.Text = "프라이버시 보호 켜짐";
-                processKillButton.Text = "끄기";
+                processKillButton.Text = "끄고 화면 잠금";
                 this.Hide();
             }
         }
