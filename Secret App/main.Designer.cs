@@ -34,7 +34,6 @@
             this.processNameBox = new System.Windows.Forms.TextBox();
             this.processKillTimer = new System.Windows.Forms.Timer(this.components);
             this.killStatus = new System.Windows.Forms.Label();
-            this.programExit = new System.Windows.Forms.Button();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
@@ -80,18 +79,6 @@
             this.killStatus.Text = "사생활 보호 꺼짐";
             this.killStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // programExit
-            // 
-            this.programExit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.programExit.AutoSize = true;
-            this.programExit.Location = new System.Drawing.Point(94, 242);
-            this.programExit.Name = "programExit";
-            this.programExit.Size = new System.Drawing.Size(75, 23);
-            this.programExit.TabIndex = 3;
-            this.programExit.Text = "종료";
-            this.programExit.UseVisualStyleBackColor = true;
-            this.programExit.Click += new System.EventHandler(this.programExit_Click);
-            // 
             // notifyIcon
             // 
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
@@ -105,7 +92,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(264, 341);
-            this.Controls.Add(this.programExit);
             this.Controls.Add(this.killStatus);
             this.Controls.Add(this.processNameBox);
             this.Controls.Add(this.processKillButton);
@@ -124,7 +110,6 @@
         private System.Windows.Forms.TextBox processNameBox;
         private System.Windows.Forms.Timer processKillTimer;
         private System.Windows.Forms.Label killStatus;
-        private System.Windows.Forms.Button programExit;
         private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }

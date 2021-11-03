@@ -15,7 +15,6 @@ namespace Secret_App
         public main()
         {
             InitializeComponent();
-            this.ControlBox = false;
         }
         private void processKillTimer_Tick(object sender, EventArgs e)
         {
@@ -46,14 +45,10 @@ namespace Secret_App
 
         private void main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = closeCancel;
-        }
-
-        private void programExit_Click(object sender, EventArgs e)
-        {
-            LockWorkStation();
-            closeCancel = false;
-            this.Close();
+            if (processKillTimer.Enabled)
+            {
+                LockWorkStation();
+            }
         }
         private void notifyIcon_Click(object sender, EventArgs e)
         {
